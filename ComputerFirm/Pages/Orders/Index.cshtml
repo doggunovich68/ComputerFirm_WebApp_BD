@@ -1,0 +1,213 @@
+﻿@page
+@model ComputerFirm.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Заказы";
+}
+
+<h1>Заказы</h1>
+
+<p>
+    <a asp-page="Create">Добавить новый заказ</a>
+</p> 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderData)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].DueData)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ShareofPrepayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].PaymentMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ExecutionMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].GeneralWarranttyPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CustomerID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].StaffID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Component1ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Component2ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Component3ID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Service1ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Service2ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Service3ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShareofPrepayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutionMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralWarranttyPeriod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.Staff_ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(r => r.ID == item.Customer_ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(r => r.ID == item.Component_1ID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+
+
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(r => r.ID == item.Component_2ID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(r => r.ID == item.Component_3ID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Service.First(r => r.ID == item.Service_3ID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Service.First(r => r.ID == item.Service_3ID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Service.First(r => r.ID == item.Service_3ID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+
+                }
+            </td>
+
+
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

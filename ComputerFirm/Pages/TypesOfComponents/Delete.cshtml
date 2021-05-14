@@ -1,0 +1,33 @@
+﻿@page
+@model ComputerFirm.Pages.TypesOfComponents.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить этот вид комплектующего? </h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypesofСomponent.NameTypesofComponents)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypesofСomponent.NameTypesofComponents)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypesofСomponent.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypesofСomponent.Description)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TypesofСomponent.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться в список</a>
+    </form>
+</div>

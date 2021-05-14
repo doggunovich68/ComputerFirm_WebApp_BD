@@ -1,0 +1,70 @@
+﻿@page
+@model ComputerFirm.Pages.Components.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить это комплектующее?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.DataofIssue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.DataofIssue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.WarrantyPeriod)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.WarrantyPeriod)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Described)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Described)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Specificatrion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Specificatrion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.CountryProduced)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.CountryProduced)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.TypesofСomponent_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.TypesofСomponent_ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Component.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться в список</a>
+    </form>
+</div>

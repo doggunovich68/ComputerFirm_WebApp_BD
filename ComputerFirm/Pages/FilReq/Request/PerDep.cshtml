@@ -1,0 +1,34 @@
+﻿@page
+@model ComputerFirm.Pages.FilReq.Request.PerDepModel
+@{
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Staff[0].FullName)</th>
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Position[0].NamePosition)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Staff)
+        {
+            <tr>
+                <td>@Html.DisplayFor(ModelItem => item.FullName)</td>
+                <td>
+                    @{ 
+                        try
+                        {
+                            @Model.Position.First(p => p.ID == item.Position_ID).NamePosition
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

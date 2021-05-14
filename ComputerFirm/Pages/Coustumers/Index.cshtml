@@ -1,0 +1,51 @@
+﻿@page
+@model ComputerFirm.Pages.Coustumers.IndexModel
+
+@{
+    ViewData["Title"] = "Заказчики";
+}
+
+<h1>Заказчики</h1>
+
+<p>
+    <a asp-page="Create">Добавить нового заказчика</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Address)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Customer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

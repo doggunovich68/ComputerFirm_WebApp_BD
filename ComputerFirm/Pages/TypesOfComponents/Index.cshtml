@@ -1,0 +1,48 @@
+﻿@page
+@model ComputerFirm.Pages.TypesOfComponents.IndexModel
+
+@{
+    ViewData["Title"] = "Виды комплектующих";
+}
+
+<h1>Виды комплектующих</h1>
+
+<p>
+    <a asp-page="Create">Добавить вид комплектующего</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesofСomponent[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesofСomponent[0].NameTypesofComponents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesofСomponent[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TypesofСomponent) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameTypesofComponents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

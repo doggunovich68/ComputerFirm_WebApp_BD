@@ -1,0 +1,163 @@
+﻿@page
+@model ComputerFirm.Pages.FilReq.Request.ListOrdersModel
+@{
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Order[0].Component_1ID)</th>
+
+            <th scope="col">@Html.DisplayNameFor(ModelItem => Model.Order[0].Customer_ID)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order)
+        {
+            <tr>
+                <td>@Html.DisplayFor(ModelItem => item.Component_1ID)</td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Component.First(p => p.ID == item.Component_1ID).Brand
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+            </tr>
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Component_2ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Component.First(p => p.ID == item.Component_2ID).Brand
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Component_3ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Component.First(p => p.ID == item.Component_3ID).Brand
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Service_1ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Service.First(p => p.ID == item.Service_1ID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Service_2ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Service.First(p => p.ID == item.Service_2ID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Service_3ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Service.First(p => p.ID == item.Service_3ID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Staff_ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(p => p.ID == item.Staff_ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.Customer_ID)</td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(p => p.ID == item.Customer_ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+
+    }
+       
+
+
+        </tbody>
+    </table>
+

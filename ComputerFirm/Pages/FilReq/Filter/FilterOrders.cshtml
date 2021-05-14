@@ -1,0 +1,77 @@
+﻿@page
+@model ComputerFirm.Pages.FilReq.Filter.FilterOrdersModel
+@{
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderData)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].DueData)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ShareofPrepayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].PaymentMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ExecutionMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].GeneralWarranttyPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CustomerID)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Order)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShareofPrepayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExecutionMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GeneralWarranttyPeriod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCost)
+                </td>
+
+
+                <td>
+
+                    @Model.Customer.FullName
+
+                </td>
+
+
+            </tr>
+}
+    </tbody>
+</table>

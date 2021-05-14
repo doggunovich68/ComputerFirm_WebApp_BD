@@ -1,0 +1,57 @@
+﻿@page
+@model ComputerFirm.Pages.Staffs.DeleteModel
+
+@{
+    ViewData["Title"] = "Уволить";
+}
+
+<h1>Уволить сотрудника</h1>
+
+<h3>Вы уверены, что хотите уволить этого сотрудника?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.PassportData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.PassportData)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Staff.ID" />
+        <input type="submit" value="Уволить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться в список</a>
+    </form>
+</div>

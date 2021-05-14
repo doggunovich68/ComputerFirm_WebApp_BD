@@ -1,0 +1,67 @@
+﻿@page
+@model ComputerFirm.Pages.FilReq.Filter.FilterPositionModel
+@{
+}
+<table class="table table-hover" >
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].PassportData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Position_ID)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Staff)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassportData)
+                </td>
+
+                <td>
+                            @Model.Position.NamePosition
+                </td>
+      </tr>
+    }
+    </tbody>
+</table>

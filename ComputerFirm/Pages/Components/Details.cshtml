@@ -1,0 +1,66 @@
+﻿@page
+@model ComputerFirm.Pages.Components.DetailsModel
+
+@{
+    ViewData["Title"] = "Информация о комплектующем";
+}
+
+<h1>Информация о комплектующем</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.DataofIssue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.DataofIssue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.WarrantyPeriod)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.WarrantyPeriod)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Described)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Described)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.Specificatrion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.Specificatrion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.CountryProduced)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.CountryProduced)
+        </dd> 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Component.TypesofСomponent_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Component.TypesofСomponent_ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Component.ID">Редактировать</a> |
+    <a asp-page="./Index">Вернуться в список</a>
+</div>
